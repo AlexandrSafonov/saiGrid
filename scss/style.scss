@@ -1,5 +1,4 @@
-@import "reset.scss";
-@mixin clear {
+@mixin clear { 
     &:before {
         content: "";
         display: block;

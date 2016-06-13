@@ -1,11 +1,13 @@
-$saiColums: false;
-$saiColumsCounter: 10;
+$saiGallery: false;
+$saiGalleryCounter: 10;
+
+
 $size: true;
 $sizeMargin: 3;
 $denominator: 3;
 
-@if $saiColums == true {
-    @for $i from 1 through $saiColumsCounter {
+@if $saiGallery == true {
+    @for $i from 1 through $saiGalleryCounter {
         .sai-columns-#{$i} { 
             text-align: justify;
             font-size: 0;
@@ -31,9 +33,9 @@ $denominator: 3;
             }
         }
     }
-    @if $saiColumsCounter >= 7 {
+    @if $saiGalleryCounter >= 7 {
         @media screen and (max-width: 1440px){
-            @for $i from 7 through $saiColumsCounter {
+            @for $i from 7 through $saiGalleryCounter {
                 .sai-columns-#{$i} { 
                     .sai-columns-item {
                         $i: 7;
@@ -53,9 +55,9 @@ $denominator: 3;
         }
     }
 
-    @if $saiColumsCounter >= 6 {
+    @if $saiGalleryCounter >= 6 {
         @media screen and (max-width: 1024px){
-            @for $i from 6 through $saiColumsCounter {
+            @for $i from 6 through $saiGalleryCounter {
                 .sai-columns-#{$i} { 
                     .sai-columns-item {
                         $i: 5;
@@ -75,9 +77,9 @@ $denominator: 3;
         }
     }
 
-    @if $saiColumsCounter >= 5 {
+    @if $saiGalleryCounter >= 5 {
         @media screen and (max-width: 992px){
-            @for $i from 5 through $saiColumsCounter {
+            @for $i from 5 through $saiGalleryCounter {
                 .sai-columns-#{$i} { 
                     .sai-columns-item {
                         $i: 4;
@@ -97,9 +99,9 @@ $denominator: 3;
         }
     }
 
-    @if $saiColumsCounter >= 4 {
+    @if $saiGalleryCounter >= 4 {
         @media screen and (max-width: 768px){
-            @for $i from 4 through $saiColumsCounter {
+            @for $i from 4 through $saiGalleryCounter {
                 .sai-columns-#{$i} { 
                     .sai-columns-item {
                         $i: 3;
@@ -119,9 +121,9 @@ $denominator: 3;
         }
     }
 
-    @if $saiColumsCounter >= 3 {
+    @if $saiGalleryCounter >= 3 {
         @media screen and (max-width: 600px){
-            @for $i from 3 through $saiColumsCounter {
+            @for $i from 3 through $saiGalleryCounter {
                 .sai-columns-#{$i} { 
                     .sai-columns-item {
                         $i: 2;
@@ -142,7 +144,7 @@ $denominator: 3;
     }
 
     @media screen and (max-width: 450px){
-        @for $i from 1 through $saiColumsCounter {
+        @for $i from 1 through $saiGalleryCounter {
             .sai-columns-#{$i} { 
                 .sai-columns-item {
                     $i: 1;
