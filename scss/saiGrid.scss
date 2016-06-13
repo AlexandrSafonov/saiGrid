@@ -1,10 +1,10 @@
-$saiGallery: false;
+$saiGallery: true;
 $saiGalleryCounter: 10;
 
 
 $size: true;
 $sizeMargin: 3;
-$denominator: 3;
+$denominator: 5; 
 
 @if $saiGallery == true {
     @for $i from 1 through $saiGalleryCounter {
