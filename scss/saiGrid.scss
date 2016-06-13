@@ -1,8 +1,9 @@
 $saiColums: false;
 $saiColumsCounter: 10;
-$size5on95: true;
+$size: true;
 $sizeMargin: 3;
-@debug $saiColumsCounter - $sizeMargin;
+$denominator: 3;
+
 @if $saiColums == true {
     @for $i from 1 through $saiColumsCounter {
         .sai-columns-#{$i} { 
@@ -154,11 +155,11 @@ $sizeMargin: 3;
     }
 }
 
-@if $size5on95 == true {
-    @for $i from 1 through 10 {
-        .size#{$i * 5}on#{100 - $i * 5} {
+@if $size == true {
+    @for $i from 1 through round(50 / $denominator - 1) {
+        .size#{$i * $denominator}on#{100 - $i * $denominator} {
             @include clear;
-            @if $i * 5 == 50 {
+            @if $i * $denominator == 50 {
                 .size#{100 - $i * 5} {
                     width: ((100 - $sizeMargin) - $i * 5) * 1%;
                     &:first-child {
@@ -169,8 +170,8 @@ $sizeMargin: 3;
                     }
                 }
             } @else {
-                .size#{$i * 5} { 
-                    width: $i * 5%; 
+                .size#{$i * $denominator} { 
+                    width: $i * $denominator * 1%; 
                     &:first-child {
                         float: left;
                     }
@@ -178,8 +179,8 @@ $sizeMargin: 3;
                         float: right;
                     }
                 }
-                .size#{100 - $i * 5} {
-                    width: ((100 - $sizeMargin) - $i * 5) * 1%;
+                .size#{100 - $i * $denominator} {
+                    width: ((100 - $sizeMargin) - $i * $denominator) * 1%; 
                     &:first-child {
                         float: left;
                     }
@@ -187,6 +188,18 @@ $sizeMargin: 3;
                         float: right;
                     }
                 }
+            }
+        }
+    }
+    .size50on50 { 
+        @include clear;
+        .size50 {
+            width: (100 - $sizeMargin) / 2 * 1%; 
+            &:first-child {
+                float: left;
+            }
+            &:last-child {
+                float: right;
             }
         }
     }
