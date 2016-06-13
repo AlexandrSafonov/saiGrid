@@ -1,15 +1,3 @@
-@mixin clear { 
-    &:before {
-        content: "";
-        display: block;
-        clear: both;
-    }
-    &:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
-}
 body {
     /* All class */
     $fontSize: 14px; 
