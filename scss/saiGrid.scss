@@ -1,0 +1,193 @@
+$saiColums: false;
+$saiColumsCounter: 10;
+$size5on95: true;
+$sizeMargin: 3;
+@debug $saiColumsCounter - $sizeMargin;
+@if $saiColums == true {
+    @for $i from 1 through $saiColumsCounter {
+        .sai-columns-#{$i} { 
+            text-align: justify;
+            font-size: 0;
+            display: table;
+            width: 100%;
+            @include clear;
+            .sai-columns-item {
+                $length: 100/$i;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 14px;   
+                @if $i == 1 {
+                    width: 100%;
+                    margin: 0 0 $length / 100 * 1% 0;
+                } @else {
+                    $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                    margin: 0 $margin $margin 0;
+                    width: ($length - $length / 50) * 1%;
+                    &:nth-child(#{$i}n+#{$i}) { 
+                        margin: 0 0 $margin 0;
+                    }
+                }
+            }
+        }
+    }
+    @if $saiColumsCounter >= 7 {
+        @media screen and (max-width: 1440px){
+            @for $i from 7 through $saiColumsCounter {
+                .sai-columns-#{$i} { 
+                    .sai-columns-item {
+                        $i: 7;
+                        $length: 100/$i;
+                        $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                        margin: 0 $margin $margin 0;
+                        width: ($length - $length / 50) * 1%;
+                        &:nth-child(n) { 
+                            margin: 0 $margin $margin 0;
+                        }
+                        &:nth-child(#{$i}n+#{$i}) { 
+                            margin: 0 0 $margin 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if $saiColumsCounter >= 6 {
+        @media screen and (max-width: 1024px){
+            @for $i from 6 through $saiColumsCounter {
+                .sai-columns-#{$i} { 
+                    .sai-columns-item {
+                        $i: 5;
+                        $length: 100/$i;
+                        $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                        margin: 0 $margin $margin 0;
+                        width: ($length - $length / 50) * 1%;
+                        &:nth-child(n) { 
+                            margin: 0 $margin $margin 0;
+                        }
+                        &:nth-child(#{$i}n+#{$i}) { 
+                            margin: 0 0 $margin 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if $saiColumsCounter >= 5 {
+        @media screen and (max-width: 992px){
+            @for $i from 5 through $saiColumsCounter {
+                .sai-columns-#{$i} { 
+                    .sai-columns-item {
+                        $i: 4;
+                        $length: 100/$i;
+                        $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                        margin: 0 $margin $margin 0;
+                        width: ($length - $length / 50) * 1%;
+                        &:nth-child(n) { 
+                            margin: 0 $margin $margin 0;
+                        }
+                        &:nth-child(#{$i}n+#{$i}) { 
+                            margin: 0 0 $margin 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if $saiColumsCounter >= 4 {
+        @media screen and (max-width: 768px){
+            @for $i from 4 through $saiColumsCounter {
+                .sai-columns-#{$i} { 
+                    .sai-columns-item {
+                        $i: 3;
+                        $length: 100/$i;
+                        $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                        margin: 0 $margin $margin 0;
+                        width: ($length - $length / 50) * 1%;
+                        &:nth-child(n) { 
+                            margin: 0 $margin $margin 0;
+                        }
+                        &:nth-child(#{$i}n+#{$i}) { 
+                            margin: 0 0 $margin 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @if $saiColumsCounter >= 3 {
+        @media screen and (max-width: 600px){
+            @for $i from 3 through $saiColumsCounter {
+                .sai-columns-#{$i} { 
+                    .sai-columns-item {
+                        $i: 2;
+                        $length: 100/$i;
+                        $margin: ($length / 50 + ($length / 50 / ($i - 1))) * 1%;
+                        margin: 0 $margin $margin 0;
+                        width: ($length - $length / 50) * 1%;
+                        &:nth-child(n) { 
+                            margin: 0 $margin $margin 0;
+                        }
+                        &:nth-child(#{$i}n+#{$i}) { 
+                            margin: 0 0 $margin 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 450px){
+        @for $i from 1 through $saiColumsCounter {
+            .sai-columns-#{$i} { 
+                .sai-columns-item {
+                    $i: 1;
+                    $length: 100/$i;
+                    width: 100%;
+                    margin: 0 $length / 100 * 1% 0 0;
+                }
+            }
+        }
+    }
+}
+
+@if $size5on95 == true {
+    @for $i from 1 through 10 {
+        .size#{$i * 5}on#{100 - $i * 5} {
+            @include clear;
+            @if $i * 5 == 50 {
+                .size#{100 - $i * 5} {
+                    width: ((100 - $sizeMargin) - $i * 5) * 1%;
+                    &:first-child {
+                        float: left;
+                    }
+                    &:last-child {
+                        float: right;
+                    }
+                }
+            } @else {
+                .size#{$i * 5} { 
+                    width: $i * 5%; 
+                    &:first-child {
+                        float: left;
+                    }
+                    &:last-child {
+                        float: right;
+                    }
+                }
+                .size#{100 - $i * 5} {
+                    width: ((100 - $sizeMargin) - $i * 5) * 1%;
+                    &:first-child {
+                        float: left;
+                    }
+                    &:last-child {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
