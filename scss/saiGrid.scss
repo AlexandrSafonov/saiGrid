@@ -10,17 +10,220 @@
         clear: both;
     }
 }
-/* Left width (only %), 
-Right width (only %), 
-margin bottom (px or %),  
-Media (only px)*/
 
-@each $left , $right, $margin, $media, $media2, $media3 in $saiGridArray {  
-    .size#{$left}#{$right} {
+@each $item1 , $item2, $item3, $item4, $item5, $margin, $media, $media2, $media3 in $saiGridArray {  
+    @if $item5 != 0 {
+        .size#{$item1}#{$item2}#{$item3}#{$item4}#{$item5} {
+            @include clear;
+            .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4}, .size#{$item5}{
+                $marginRight: (100 - ($item1 + $item2 + $item3 + $item4 + $item5)) / 4;
+                margin: 0 $marginRight * 1% $margin 0;
+                float: left;
+                &:nth-child(5n+5) {
+                    margin: 0 0 $margin 0;
+                }
+            }
+            .size#{$item1} {
+                width: $item1 * 1%;
+            }
+            .size#{$item2} {
+                width: $item2 * 1%;
+            }
+            .size#{$item3} {
+                width: $item3 * 1%;
+            }
+            .size#{$item4} {
+                width: $item4 * 1%;
+            }
+            .size#{$item5} {
+                width: $item5 * 1%;
+            }
+            @if $media {
+                @media screen and (max-width: $media) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4}, .size#{$item5} {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media2 {
+                @media screen and (max-width: $media2) {
+                    .size#{$item1} , .size#{$item2}, .size#{$item3}, .size#{$item4}, .size#{$item5}  {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media3 {
+                @media screen and (max-width: $media3) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4}, .size#{$item5} {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    } @else if $item4 != 0 {
+        .size#{$item1}#{$item2}#{$item3}#{$item4} {
+            @include clear;
+            .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4} {
+                $marginRight: (100 - ($item1 + $item2 + $item3 + $item4)) / 3;
+                margin: 0 $marginRight * 1% $margin 0;
+                float: left;
+                &:nth-child(4n+4) {
+                    margin: 0 0 $margin 0;
+                }
+            }
+            .size#{$item1} {
+                width: $item1 * 1%;
+            }
+            .size#{$item2} {
+                width: $item2 * 1%;
+            }
+            .size#{$item3} {
+                width: $item3 * 1%;
+            }
+            .size#{$item4} {
+                width: $item4 * 1%;
+            }
+            @if $media {
+                @media screen and (max-width: $media) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4} {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media2 {
+                @media screen and (max-width: $media2) {
+                    .size#{$item1} , .size#{$item2}, .size#{$item3}, .size#{$item4}  {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media3 {
+                @media screen and (max-width: $media3) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3}, .size#{$item4} {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    } @else if $item3 != 0 {
+        .size#{$item1}#{$item2}#{$item3} {
+            @include clear;
+            .size#{$item1}, .size#{$item2}, .size#{$item3}{
+                $marginRight: (100 - ($item1 + $item2 + $item3)) / 2;
+                margin: 0 $marginRight * 1% $margin 0;
+                float: left;
+                &:nth-child(3n+3) {
+                    margin: 0 0 $margin 0;
+                }
+            }
+            .size#{$item1} {
+                width: $item1 * 1%;
+            }
+            .size#{$item2} {
+                width: $item2 * 1%;
+            }
+            .size#{$item3} {
+                width: $item3 * 1%;
+            }
+            @if $media {
+                @media screen and (max-width: $media) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3} {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media2 {
+                @media screen and (max-width: $media2) {
+                    .size#{$item1} , .size#{$item2}, .size#{$item3}  {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media3 {
+                @media screen and (max-width: $media3) {
+                    .size#{$item1}, .size#{$item2}, .size#{$item3} {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    } @else if $item2 != 0 {
+        .size#{$item1}#{$item2} {
+            @include clear;
+            .size#{$item1}, .size#{$item2} {
+                margin: 0 0 $margin 0;
+                &:first-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                }
+            }
+            .size#{$item1} {
+                width: $item1 * 1%;
+            }
+            .size#{$item2} {
+                width: $item2 * 1%;
+            }
+            @if $media {
+                @media screen and (max-width: $media) {
+                    .size#{$item1}, .size#{$item2} {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media2 {
+                @media screen and (max-width: $media2) {
+                    .size#{$item1} , .size#{$item2}  {
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media3 {
+                @media screen and (max-width: $media3) {
+                    .size#{$item1}, .size#{$item2} {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    } @else if $item1 != 0 {
+        .size#{$item1} {
+            .size#{$item1} {
+                margin: 0 0 $margin 0;
+            }
+            .size#{$item1} {
+                width: $item1 * 1%;
+            }
+            @if $media {
+                @media screen and (max-width: $media) {
+                    .size#{$item1}{
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media2 {
+                @media screen and (max-width: $media2) {
+                    .size#{$item1}{
+                        width: 100%;
+                    }
+                }
+            }
+            @if $media3 {
+                @media screen and (max-width: $media3) {
+                    .size#{$item1}{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $item1 in $saiGridArray1 {  
+    .size#{nth(nth($item1 ,1) ,1)} { 
         @include clear;
-
-        .size#{$left}, .size#{$right} {
-            margin: 0 0 $margin 0;
+        .size#{nth(nth($item1 ,1) ,1)} {
             &:first-child {
                 float: left;
             }
@@ -28,36 +231,22 @@ Media (only px)*/
                 float: right;
             }
         }
-        .size#{$left} {
-            width: $left * 1%;
+        .size#{nth( nth($item1 ,1) ,1)} {
+            width: nth( nth($item1 ,1) ,1) * 1%;
         }
-        .size#{$right} {
-            width: $right * 1%;
-        }
-        @media screen and (max-width: $media) {
-            .size#{$left}, .size#{$right} {
-                width: 100%;
+    }
+    .size#{nth( nth($item1 ,2) ,1)} { 
+        @include clear;
+        .size#{nth( nth($item1 ,2) ,1)} {
+            &:first-child {
+                float: left;
+            }
+            &:last-child {
+                float: right;
             }
         }
-        @if $media2 {
-            @media screen and (max-width: $media2) {
-                .size#{$left} {
-                    width: 100%;
-                }
-                .size#{$right} {
-                    width: 100%;
-                }
-            }
-        }
-        @if $media3 {
-            @media screen and (max-width: $media3) {
-                .size#{$left} {
-                    width: 100%;
-                }
-                .size#{$right} {
-                    width: 100%;
-                }
-            }
+        .size#{nth( nth($item1 ,2) ,1)} {
+            width: nth( nth($item1 ,2) ,1) * 1%;
         }
     }
 }

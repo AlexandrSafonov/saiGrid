@@ -2,10 +2,18 @@ body {
     /* All class */
     $fontSize: 14px; 
     $lineHeight: 25px; 
-
+    /* 
+    Left width (only %), 
+    Right width (only %), 
+    margin bottom (px or %),  
+    Media (only px)
+    */
     $saiGridArray: (
-        30 50 30px 768px 333px,
-        32 65 30px 650px
+/*         Item width   30 50 0 0 0  end   30px,
+         Item width   30 40 20 0 0  end   30px */
+    );
+    $saiGridArray1: (
+            (50 0 10 30 0) (30 0 10 30 0)
         );
     @import "saiGrid.scss"; 
 

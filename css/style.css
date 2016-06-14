@@ -1,80 +1,90 @@
 body {
   /* All class */
-  /* Left width (only %), 
+  /* 
+  Left width (only %), 
   Right width (only %), 
   margin bottom (px or %),  
-  Media (only px)*/
+  Media (only px)
+  */
   font-size: 14px;
   line-height: 25px;
   /* Main */
 }
-body .size3050:before {
+body .size50:before {
   content: "";
   display: block;
   clear: both;
 }
-body .size3050:after {
+body .size50:after {
   content: "";
   display: block;
   clear: both;
 }
-body .size3050 .size30, body .size3050 .size50 {
-  margin: 0 0 30px 0;
-}
-body .size3050 .size30:first-child, body .size3050 .size50:first-child {
+body .size50 .size50:first-child {
   float: left;
 }
-body .size3050 .size30:last-child, body .size3050 .size50:last-child {
+body .size50 .size50:last-child {
   float: right;
 }
-body .size3050 .size30 {
-  width: 30%;
-}
-body .size3050 .size50 {
+body .size50 .size50 {
   width: 50%;
 }
-@media screen and (max-width: 768px) {
-  body .size3050 .size30, body .size3050 .size50 {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 333px) {
-  body .size3050 .size30 {
-    width: 100%;
-  }
-  body .size3050 .size50 {
-    width: 100%;
-  }
-}
-body .size3265:before {
+body .size0:before {
   content: "";
   display: block;
   clear: both;
 }
-body .size3265:after {
+body .size0:after {
   content: "";
   display: block;
   clear: both;
 }
-body .size3265 .size32, body .size3265 .size65 {
-  margin: 0 0 30px 0;
-}
-body .size3265 .size32:first-child, body .size3265 .size65:first-child {
+body .size0 .size0:first-child {
   float: left;
 }
-body .size3265 .size32:last-child, body .size3265 .size65:last-child {
+body .size0 .size0:last-child {
   float: right;
 }
-body .size3265 .size32 {
-  width: 32%;
+body .size0 .size0 {
+  width: 0%;
 }
-body .size3265 .size65 {
-  width: 65%;
+body .size30:before {
+  content: "";
+  display: block;
+  clear: both;
 }
-@media screen and (max-width: 650px) {
-  body .size3265 .size32, body .size3265 .size65 {
-    width: 100%;
-  }
+body .size30:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .size30 .size30:first-child {
+  float: left;
+}
+body .size30 .size30:last-child {
+  float: right;
+}
+body .size30 .size30 {
+  width: 30%;
+}
+body .size0:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .size0:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .size0 .size0:first-child {
+  float: left;
+}
+body .size0 .size0:last-child {
+  float: right;
+}
+body .size0 .size0 {
+  width: 0%;
 }
 body .w1 {
   position: relative;
