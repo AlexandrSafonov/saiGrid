@@ -2,8 +2,13 @@ body {
     /* All class */
     $fontSize: 14px; 
     $lineHeight: 25px; 
+
+    $saiGridArray: (
+        30 50 30px 768px 333px,
+        32 65 30px 650px
+        );
     @import "saiGrid.scss"; 
-    
+
     font-size: $fontSize;
     line-height: $lineHeight;
     .w1 {

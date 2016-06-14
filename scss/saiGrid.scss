@@ -10,12 +10,63 @@
         clear: both;
     }
 }
+/* Left width (only %), 
+Right width (only %), 
+margin bottom (px or %),  
+Media (only px)*/
 
-$saiGallery: true;
+@each $left , $right, $margin, $media, $media2, $media3 in $saiGridArray {
+    .size#{$left}#{$right} {
+        @include clear;
+
+        .size#{$left}, .size#{$right} {
+            margin: 0 0 $margin 0;
+            &:first-child {
+                float: left;
+            }
+            &:last-child {
+                float: right;
+            }
+        }
+        .size#{$left} {
+            width: $left * 1%;
+        }
+        .size#{$right} {
+            width: $right * 1%;
+        }
+        @media screen and (max-width: $media) {
+            .size#{$left}, .size#{$right} {
+                width: 100%;
+            }
+        }
+        @if $media2 {
+            @media screen and (max-width: $media2) {
+                .size#{$left} {
+                    width: 100%;
+                }
+                .size#{$right} {
+                    width: 100%;
+                }
+            }
+        }
+        @if $media3 {
+            @media screen and (max-width: $media3) {
+                .size#{$left} {
+                    width: 100%;
+                }
+                .size#{$right} {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+$saiGallery: false;
 $saiGalleryCounter: 10;
 
 
-$size: true;
+$size: false;
 $sizeMargin: 3;
 $denominator: 5; 
 
