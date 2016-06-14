@@ -15,7 +15,7 @@ Right width (only %),
 margin bottom (px or %),  
 Media (only px)*/
 
-@each $left , $right, $margin, $media, $media2, $media3 in $saiGridArray {
+@each $left , $right, $margin, $media, $media2, $media3 in $saiGridArray {  
     .size#{$left}#{$right} {
         @include clear;
 
