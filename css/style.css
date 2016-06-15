@@ -1,90 +1,88 @@
 body {
   /* All class */
-  /* 
-  Left width (only %), 
-  Right width (only %), 
-  margin bottom (px or %),  
-  Media (only px)
-  */
   font-size: 14px;
   line-height: 25px;
   /* Main */
 }
-body .size50:before {
+body .three_item:before {
   content: "";
   display: block;
   clear: both;
 }
-body .size50:after {
+body .three_item:after {
   content: "";
   display: block;
   clear: both;
 }
-body .size50 .size50:first-child {
+body .three_item .size30 {
   float: left;
-}
-body .size50 .size50:last-child {
-  float: right;
-}
-body .size50 .size50 {
-  width: 50%;
-}
-body .size0:before {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size0:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size0 .size0:first-child {
-  float: left;
-}
-body .size0 .size0:last-child {
-  float: right;
-}
-body .size0 .size0 {
-  width: 0%;
-}
-body .size30:before {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size30:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size30 .size30:first-child {
-  float: left;
-}
-body .size30 .size30:last-child {
-  float: right;
-}
-body .size30 .size30 {
   width: 30%;
+  margin: 0 20% 30px 0;
 }
-body .size0:before {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size0:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-body .size0 .size0:first-child {
+body .three_item .size20 {
   float: left;
+  width: 20%;
+  margin: 0 10% 30px 0;
 }
-body .size0 .size0:last-child {
-  float: right;
+body .three_item .size10 {
+  float: left;
+  width: 10%;
+  margin: 0 0 30px 0;
 }
-body .size0 .size0 {
-  width: 0%;
+@media screen and (max-width: 768px) {
+  body .three_item .size30,
+  body .three_item .size20,
+  body .three_item .size10 {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+body .five_item:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .five_item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+body .five_item .size19 {
+  float: left;
+  width: 19%;
+  margin: 0 1% 30px 0;
+}
+body .five_item .size19 {
+  float: left;
+  width: 19%;
+  margin: 0 1% 30px 0;
+}
+body .five_item .size19 {
+  float: left;
+  width: 19%;
+  margin: 0 1% 30px 0;
+}
+body .five_item .size19 {
+  float: left;
+  width: 19%;
+  margin: 0 0 30px 0;
+}
+body .five_item .size19 {
+  float: left;
+  width: 19%;
+  margin: 0 1% 30px 0;
+}
+@media screen and (max-width: 900px) {
+  body .five_item .size19,
+  body .five_item .size19,
+  body .five_item .size19,
+  body .five_item .size19,
+  body .five_item .size19 {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 body .w1 {
   position: relative;

@@ -2,18 +2,12 @@ body {
     /* All class */
     $fontSize: 14px; 
     $lineHeight: 25px; 
-    /* 
-    Left width (only %), 
-    Right width (only %), 
-    margin bottom (px or %),  
-    Media (only px)
-    */
+    
+    // (Name) (Media query checkpoint) ( Item№: width  margin 0 0 0 0 ) ... (...) 
     $saiGridArray: (
-/*         Item width   30 50 0 0 0  end   30px,
-         Item width   30 40 20 0 0  end   30px */
-    );
-    $saiGridArray1: (
-            (50 0 10 30 0) (30 0 10 30 0)
+        ( (none) (0) (0 0 0 0 0) ), // Do not remove this line
+        ( (three_item) (768px) (30   0 20% 30px 0) (20   0 10% 30px 0) (10   0 0 30px 0) ),
+        ( (five_item)  (900px) (19   0 1% 30px 0)  (19   0 1% 30px 0)  (19   0 1% 30px 0) (19   0 0 30px 0) (19   0 1% 30px 0) )
         );
     @import "saiGrid.scss"; 
 
